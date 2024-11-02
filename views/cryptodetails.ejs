@@ -1,0 +1,51 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container-cryptodetails">
+  <div class="symbol">
+    <h2><%= data[0].symbol %></h2>
+  </div>
+  <div class="name">
+    <h2><%= data[0].name %></h2>
+  </div>
+  <div class="rank">
+    <h2>Rank: <%= data[0].rank %></h2>
+  </div>
+  <div class="price">
+    <h2>Price($): <%= data[0].price_usd %></h2>
+  </div>
+  <div class="volume">
+    <div class="marketcap">
+      <h2>Market Cap($): <%= data[0].market_cap_usd %></h2>
+    </div>
+    <div class="volume-usd">
+      <h2>Volume($): <%= data[0].volume24 %></h2>
+    </div>
+    <div class="volume-coins">
+      <h2>Volume(coins): <%= data[0].volume24a %></h2>
+    </div>
+  </div>
+  <div class="percent">
+    <div class="percent-24">
+      <h2>Percent Change(24h): <%= data[0].percent_change_24h %></h2>
+    </div>
+    <div class="percent-1h">
+      <h2>Percent Change(1h): <%= data[0].percent_change_1h %></h2>
+    </div>
+    <div class="percent-7d">
+      <h2>Percent Change(7d): <%= data[0].percent_change_7d %></h2>
+    </div>
+  </div>
+  <div class="supply">
+    <div class="csupply">
+      <h2>Circulating Supply: <%= data[0].csupply %></h2>
+    </div>
+    <div class="tsupply">
+      <h2>Total Supply: <%= data[0].tsupply %></h2>
+    </div>
+    <div class="maxsupply">
+      <h2>Max Supply: <%= data[0].maxsupply %></h2>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

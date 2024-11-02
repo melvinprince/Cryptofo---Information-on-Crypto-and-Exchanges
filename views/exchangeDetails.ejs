@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container-exchangedetails">
+    <% if (typeof exchangeData === "undefined") { %>
+    <div class="name">
+        <h2><%= exchangeData[0].name %></h2>
+    </div>
+    <div class="url">
+        <h2>URL: <%= exchangeData[0].url %></h2>
+    </div>
+    <% } else { %>
+    <h2>No Exchange Found</h2>
+    <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,43 @@
+<%- include('partials/header.ejs') %>
+
+<div>
+  <div>
+    <h1>Cryptofo</h1>
+    <h2>One Stop Information page for Crypto</h2>
+  </div>
+  <div class="main-img"><img src="" alt="" /></div>
+</div>
+
+<div class="container2">
+  <div class="container2-1">
+    <h2 class="crypto-home">Cryptos</h2>
+    <form action="/cryptodetails" method="post">
+      <select id="dynamicDropdown-crypto" name="cryptoId">
+        <option value="">Choose Crypto...</option>
+        <% if (cryptoData != null) { %>
+          <% cryptoData.cryptoData.forEach((crypto) => { %>
+            <option value="<%= crypto.id %>"><%= crypto.name %></option>
+          <% }) %>
+        <% } %>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="container2-2">
+    <h2 class="crypto-home">Exchanges</h2>
+    <form action="/exchangedetails" method="post">
+      <select id="dynamicDropdown-exchange" name="exchangeId">
+        <option value="">Choose Exchange...</option>
+        <% if (exchangeData != null) { %>
+          <% exchangeData.exchangeData.forEach((exchange) => { %>
+            <option value="<%= exchange.id %>"><%= exchange.name %></option>
+          <% }) %>
+        <% } %>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
